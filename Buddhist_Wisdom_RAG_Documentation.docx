@@ -1,0 +1,95 @@
+Buddhist Wisdom RAG System Documentation
+
+Overview
+This document explains the implementation of a Retrieval Augmented Generation (RAG) system that provides Buddhist-inspired guidance for emotional concerns. The system combines Buddhist teachings with modern AI technology to offer personalized, compassionate advice.
+
+Components and Implementation
+1. Data Source
+   - The system uses a text file (buddhist.txt) containing Buddhist teachings
+   - Topics include: The Four Noble Truths, mindfulness, anxiety management, and daily practices
+   - The text is structured to provide both philosophical context and practical advice
+
+2. Technical Architecture
+   a) Document Processing
+      - Loads Buddhist teachings from text file
+      - Splits content into meaningful chunks
+      - Creates embeddings for semantic search
+   
+   b) RAG Implementation
+      - Uses LangChain for the RAG pipeline
+      - Employs OpenAI's embeddings for semantic search
+      - Implements fallback local embeddings for testing
+      - Uses a custom prompt template for compassionate responses
+
+3. Key Features
+   - Semantic search in Buddhist teachings
+   - Context-aware response generation
+   - Fallback system for offline testing
+   - Compassionate and accessible response formatting
+
+Step-by-Step Workflow
+1. Loading and Preprocessing
+   - The system loads the Buddhist text
+   - Splits it into chunks of ~500 characters with 100-character overlap
+   - Creates document objects for processing
+
+2. Vector Store Creation
+   - Generates embeddings for each text chunk
+   - Stores them in an in-memory vector store
+   - Implements fallback embeddings for reliability
+
+3. Response Generation
+   - Takes user's emotional concern as input
+   - Retrieves relevant Buddhist teachings
+   - Generates compassionate, contextual responses
+   - Grounds advice in Buddhist philosophy
+
+Usage Example
+Input: "I am feeling anxious"
+
+[Screenshot 1: Code execution and embedding creation]
+[Screenshot 2: Retrieved relevant passages]
+[Screenshot 3: Generated compassionate response]
+
+Technical Requirements
+- Python environment with:
+  - langchain
+  - openai/langchain-openai
+  - python-dotenv
+  - Other supporting libraries
+
+Configuration
+- Requires OpenRouter API key in .env file
+- Uses GPT-4 Turbo for response generation
+- Configurable chunk sizes and overlap
+- Customizable prompt templates
+
+Best Practices
+1. API Key Management
+   - Store API keys in .env file
+   - Never commit sensitive credentials
+   - Use environment variables for configuration
+
+2. Error Handling
+   - Graceful fallback to local embeddings
+   - Clear error messages
+   - Robust exception handling
+
+3. Response Quality
+   - Maintains Buddhist terminology while being accessible
+   - Balances philosophy with practical advice
+   - Ensures compassionate tone
+
+Adding Your Own Content
+To extend or modify the system:
+1. Edit buddhist.txt to update teachings
+2. Adjust chunk sizes in the notebook
+3. Modify the prompt template for different response styles
+
+Future Improvements
+1. Add more Buddhist texts and teachings
+2. Implement source attribution
+3. Add multi-language support
+4. Create a web interface
+
+[Note: Please add screenshots of actual outputs in the marked sections above when running the notebook]
