@@ -76,3 +76,4 @@ secrets.json
 
 # Ignore lockfile for uv if you want (commented out by default)
 # uv.lock
+.env
