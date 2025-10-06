@@ -67,21 +67,21 @@ def build_llm_and_embeddings(api_key: str):
     base = "https://openrouter.ai/api/v1"
 
     llm = ChatOpenAI(
-    model="openai/gpt-4o-mini",
-    openai_api_key=os.getenv("OPENROUTER_API_KEY"),
-    openai_api_base="https://openrouter.ai/api/v1",
-    # optional but recommended by OpenRouter:
-    default_headers={
-        "HTTP-Referer": "http://localhost",   # your site/app URL if you have one
-        "X-Title": "LangChain RAG Script",
-    },
-)
+        model="openai/gpt-4o-mini",
+        openai_api_key=os.getenv("OPENROUTER_API_KEY"),
+        openai_api_base="https://openrouter.ai/api/v1",
+        # optional but recommended by OpenRouter:
+        default_headers={
+            "HTTP-Referer": "http://localhost",   # your site/app URL if you have one
+            "X-Title": "LangChain RAG Script",
+        },
+    )
 
 
     embeddings = OpenAIEmbeddings(
-    model="openai/text-embedding-3-large",   # <-- add the provider prefix
-    openai_api_key=os.getenv("OPENROUTER_API_KEY"),
-    openai_api_base="https://openrouter.ai/api/v1",
+        model="openai/text-embedding-3-large",   # <-- add the provider prefix
+        openai_api_key=os.getenv("OPENROUTER_API_KEY"),
+        openai_api_base="https://openrouter.ai/api/v1",
 )
 
     return llm, embeddings
